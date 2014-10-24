@@ -1,0 +1,33 @@
+<div class="" data-ng-controller="MogaclusterController">
+  <h1>Cluster Data Using Multiobjective Genetic Algorithm:</h1>
+	<div class="col-lg-6">
+	<form role="form" data-ng-submit="create()" >
+		<div class="form-group">
+			<label for="title">Name</label>
+			<input id="title" type="text" class="form-control" data-ng-model="title">
+		</div>
+		<div class="form-group">
+			<label for="inputFileName">File Name</label>
+			<input id="inputFileName" type="text" class="form-control" data-ng-model="inputFileName">
+		</div>
+		<div class="form-group">
+			<label for="dataFile">Data File</label>
+			<input type="file" class="form-control" id="dataFile">
+		</div>
+		<div class="form-group">
+			<label for="foldChange">Fold Change</label>
+			<input name="foldChange" type="text" class="form-control" data-ng-model="foldChange" id="foldChange" placeholder="2" required>
+
+		</div>
+		<div class="form-group">
+			<label for="experimentsOverFoldChange">Number of experiments the exceed the fold change parameter</label>
+			<input class="form-control" type="text" id="experimentsOverFoldChange">
+			<p class="help-block">Example block-level help text here.</p>
+		</div>
+
+		<button mean-token="'create-submit'" type="submit" class="btn btn-default">Submit</button>
+	</form>
+	</div>
+	<div>{{responseFromServer}}</div>
+</div>
+

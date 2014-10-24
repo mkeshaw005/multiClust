@@ -1,0 +1,9 @@
+
+.bower-cache
+.bower-registry
+.bower-tmp
+.idea
+bower_components
+node_modules
+files/public/experiments
+files/public/mogaClustering

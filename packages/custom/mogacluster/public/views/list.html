@@ -1,0 +1,50 @@
+<section data-ng-controller="MogaclusterController" data-ng-init="find()">
+	<div class="col-lg-12">
+		<div class="col-lg-8">
+			<h3>MOGA Clustering Jobs</h3>
+		</div>
+		<div class="col-lg-4 pull-right" style="padding-right: 0px;">
+			<button class="btn pull-right" href="/#!/mogacluster/create" data-ng-click="openCreateView()">Create Clustering Job</button>
+		</div>
+	</div>
+	<div class="col-lg-12">
+	<table class="table table-bordered table-striped table-hover table-condensed">
+		<thead>
+		<tr>
+			<th>
+				Name
+			</th><th>
+				File Name
+			</th><th>
+				Status
+			</th><th>
+				Starting Date
+			</th><th>
+				User
+			</th><th>
+				Edit / Delete
+			</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr data-ng-repeat="mogaCluster in mogaClusters">
+			<td><a data-ng-href="#!/mogacluster/{{mogaCluster._id}}/view">{{mogaCluster.title}}</a></td>
+			<td>{{mogaCluster.analysisParameters.dataFileName}}</td>
+			<td>{{mogaCluster.status}}</td>
+			<td>{{mogaCluster.created | date:'short'}}</td>
+			<td>{{mogaCluster.user.name}}</td><td>
+        <span data-ng-if="hasAuthorization(mogaCluster)">
+          <a class="btn" href="/#!/mogacluster/{{mogaCluster._id}}/edit">
+	          <i class="glyphicon glyphicon-edit"></i>
+          </a>
+          <a class="btn" data-ng-click="remove(mogaCluster);">
+	          <i class="glyphicon glyphicon-trash"></i>
+          </a>
+        </span>
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	</div>
+
+</section>
